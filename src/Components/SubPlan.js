@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SubPlan() {
     return (
-        <div className='gap-6 mx-auto pr-5 w-[75%] pt-3 mb-10'>
+        <div className='gap-6 mx-auto pr-5 w-11/12 md:w-[75%] pt-3 mb-10'>
             <section section className='flex items-center justify-center gap-10 mt-10'>
                 <div className='border py-5 px-4 rounded-md flex items-center flex-col w-80'>
                     <h2 className='border-b border-gray-700 text-3xl pb-2 text-gray-700 text-center leading-10 mb-5'>3 Cards per Month for $12.50</h2>

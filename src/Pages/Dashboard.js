@@ -31,14 +31,25 @@ export default function Dashboard() {
     ];
 
     const [activeIndex, setActiveIndex] = useState(0);
+    const [sidebarShown, setSidebarShown] = useState(false);
     const handleChangeText = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
     };
+
+    const handleSidebar = () => {
+        setSidebarShown(!sidebarShown);
+    }
+
     return (
         <>
             <main>
                 <header className='border-b'>
                     <nav className='flex items-center justify-between w-full max-w-screen-2xl px-6 mx-auto py-1'>
+                        <div className='block md:hidden' onClick={handleSidebar}>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-7 text-main-utility">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            </svg>
+                        </div>
                         <Link to={'/'}> <img src={logo} alt="Logo" className="w-40 h-16 mx-auto" /></Link>
                         <div className='flex items-center gap-5'>
                             <span className='cursor-pointer text-gray-500 hover:text-main-utility transition-all'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -54,8 +65,8 @@ export default function Dashboard() {
                 </header>
 
                 {/* SECTION DASHBOARD CONTENT */}
-                <section className='flex justify-center w-full gap-4 max-w-screen-2xl mx-auto'>
-                    <aside className="w-[22%] h-auto border border-gray-200 border-t-0 bg-gray-50">
+                <section className='relative flex justify-center w-full gap-4 max-w-screen-2xl mx-auto'>
+                    <aside className={`absolute h-full w-80 md:w-[22%] md:h-auto border border-gray-200 border-t-0 bg-gray-50 ${sidebarShown ? 'left-0' : '-left-96'} md:relative md:left-0 transition-all duration-300`}>
                         <div className="pt-4">
                             <ul className="space-y-4 mb-8 mt-4 text-lg">
                                 {items.map((item, index) => (

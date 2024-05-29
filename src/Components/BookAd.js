@@ -3,11 +3,11 @@ import React from 'react'
 export default function BookAd() {
     return (
         <>
-            <div className='gap-6 mx-auto pr-5 w-[75%] pt-3 mb-10'>
+            <div className='gap-6 mx-auto pr-5 w-11/12 md:w-[75%] pt-3 mb-10'>
                 <section className='flex items-center flex-col gap-5'>
                     <div className='flex items-center justify-center flex-col gap-4 w-full'>
                         <h1 className='text-gray-700 text-2xl self-start font-text-shadow-italic font-bold'>Tell Us About Them</h1>
-                        <div className='border py-4 px-6 flex items-center justify-between w-full bg-gray-100 border-gray-700 rounded-md'>
+                        <div className='border py-4 px-6 sm:flex flex-col items-center sm:items-start gap-4 justify-between w-full bg-gray-100 border-gray-700 rounded-md'>
                             <div className='border border-gray-400 flex items-center justify-center h-36 w-36 rounded-md bg-white cursor-pointer hover:opacity-70 font-text-shadow-italic text-xl'>Upload Photo</div>
                             <div className='flex items-start justify-center gap-12'>
                                 <div className='flex flex-col gap-6'>

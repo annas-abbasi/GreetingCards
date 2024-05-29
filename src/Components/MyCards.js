@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import img1 from '../Images/img1.webp'
 import img2 from '../Images/img2.webp'
@@ -33,7 +33,7 @@ export default function MyCards() {
     };
 
     return (
-        <div className='gap-6 mx-auto pr-8 w-[75%] pt-2'>
+        <div className='gap-6 mx-auto pr-8 w-11/12 md:w-[75%] pt-2'>
             <section section className='flex items-center flex-col gap-2'>
                 <div className='flex items-center justify-center flex-col gap-16 sm:gap-2 w-full text-center px-5'>
                     <div className='flex justify-between w-full ml-6 text-3xl text-gray-700'>

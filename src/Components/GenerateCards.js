@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import img1 from '../Images/img1.webp'
 import img2 from '../Images/img2.webp'
@@ -32,37 +32,6 @@ export default function GenerateCards() {
         }
     };
 
-    const [activeIndex, setActiveIndex] = useState(null);
-
-    const handleChangeText = (index) => {
-        setActiveIndex(index === activeIndex ? null : index);
-    };
-
-    const items = [
-        { text: 'My Cards', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
-        { text: 'Generate Cards', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
-        { text: 'Address Book', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
-        { text: 'Calendar', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
-        { text: 'Drafts & Favourites', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
-        { text: 'Subsctiption Plans', svg: <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg> },
-    ];
-
-    // FOR THE SINGLE SLIDER
-    const [activeIndexx, setActiveIndexx] = useState(0);
-
-    // Function to handle dot click
-    const handleDotClick = (index) => {
-        setActiveIndexx(index);
-    };
-
-    // Function to handle automatic navigation after 4 seconds
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveIndexx((prevIndex) => (prevIndex + 1) % 8); // Assuming you have 8 images
-        }, 4000);
-        return () => clearInterval(interval);
-    }, []);
-
     const responsivee = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
@@ -82,7 +51,7 @@ export default function GenerateCards() {
         }
     };
     return (
-        <div className='gap-6 mx-auto pr-5 w-[75%] pt-3 mb-10'>
+        <div className='gap-6 mx-auto pr-5 w-11/12 md:w-[75%] pt-3 mb-10'>
             <div className='flex items-center justify-center flex-col gap-16 sm:gap-2 w-full text-center px-5'>
                 <article className="w-full border-b border-gray-200 pb-4 mb-8">
                     <Carousel
@@ -103,15 +72,14 @@ export default function GenerateCards() {
                     </Carousel>
                 </article>
 
-                <div className='w-full flex items-center justify-between gap-10'>
-                    <article className="w-[45%]">
+                <div className='w-full flex-col md:flex items-center justify-between gap-10'>
+                    <article className="w-[45%] mx-auto">
                         <Carousel
                             responsive={responsivee}
                             infinite={true}
                             partialVisible={false}
                             autoPlay={true}
                             autoPlaySpeed={4000}
-                            // customDot={<CustomDot activeIndexx={activeIndexx} handleDotClick={handleDotClick} />}
                             arrows={false}
                         >
                             {[img1, img2, img3, img4, img5, img6, img7, img8].map((imageUrl, index) => {
@@ -159,19 +127,3 @@ export default function GenerateCards() {
         </div>
     )
 }
-
-
-
-// export const CustomDot = ({ activeIndexx, handleDotClick }) => {
-//     return (
-//         <ul className="custom-dot-list-style">
-//             {[...Array(8)].map((_, index) => (
-//                 <li
-//                     key={index}
-//                     className={`custom-dot ${activeIndexx === index ? 'active' : ''}`}
-//                     onClick={() => handleDotClick(index)}
-//                 />
-//             ))}
-//         </ul>
-//     );
-// };
